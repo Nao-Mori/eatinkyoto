@@ -4,28 +4,33 @@ import { animated, useSpring } from "react-spring"
 import SpotData from "./SpotData"
 
 interface Props {
-  currentSpot: string
+  currentSpot: string,
+  touring: any
 }
 
-const Header: React.FC<Props> = ({ currentSpot }) => {
+const Header: React.FC<Props> = ({ currentSpot, touring }) => {
   const [navShow, setNavShow] = useState(false)
   const fade = useSpring({
     position:"fixed",
     top: 0,
-    left: 0,
+    left: !navShow? "100%":"0%",
     zIndex: 1,
     width:"100vw",
     height:"100vh",
+    marginLeft:"310px",
     opacity: navShow? 1:0
   })
   const slide = useSpring({
     position: "fixed",
     top: 0,
     height:"100vh",
-    left: !navShow? "-50%": "0%",
+    left: !navShow? "-100%": "0%",
     backgroundColor: "rgba(70,0,0,0.9)",
-    padding: "60px 30px 0px 30px",
-    color: "white"
+    padding: "60px 40px 0px 25px",
+    color: "white",
+    width: "250px",
+    overflow: "auto",
+    zIndex: 1,
   })
 
   useEffect(()=>{
@@ -34,8 +39,7 @@ const Header: React.FC<Props> = ({ currentSpot }) => {
 
   return (
     <>
-      <animated.div style={fade} className="back"
-        onClick={()=>{if(navShow) setNavShow(false)}} >
+      <animated.div style={fade} className="back" onClick={()=>setNavShow(false)} />
         <animated.div style={slide}>
           <h2>Tour Spots</h2>
           <ul>
@@ -43,15 +47,30 @@ const Header: React.FC<Props> = ({ currentSpot }) => {
             return (
             <li
               key={key}
-              style={{ color: spot.name === currentSpot ? "orange": "white" }}
+              style={ spot.name === currentSpot ? {
+                color: "orange",
+              }:{}}
+              onClick = {()=>{
+                touring(key)
+                if(typeof window.orientation !== "undefined") setNavShow(false)
+              }}
             >
               {spot.name}
             </li>
             )
           })}
           </ul>
+          <h3 style={{marginTop:"100px"}}>Tell me your favorite spot!</h3>
+          <h4>Name</h4>
+          <input />
+          <h4>Address / Google Maps Link</h4>
+          <input />
+          <h4>Description (optional)</h4>
+          <textarea  />
+          <br/>
+          <button>SEND</button>
+          <div style={{height:"100px"}}/>
         </animated.div>
-      </animated.div>
         
       <div
         style={{

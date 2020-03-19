@@ -2,23 +2,33 @@ const SpotData:
     { 
         name: string,
         description: string,
-        location: { lat: number | null, lng: number | null } 
+        location: { lat: number | null, lng: number | null },
+        key: number
     }[] = 
     [
         {
             name: "Higashi-Honganji",
-            description: "",
-            location: {lat: 34.99, lng: 135.75}
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sunt labore vitae pariatur, cumque eum,",
+            location: {lat: 34.99, lng: 135.75},
+            key: 0
         },
         {
-            name: "Kyoto Tower",
-            description: "",
-            location: {lat: 34.990967, lng: 135.7587377}
+            name: "Daiki-Suisan",
+            description: "The classic sushi-go-round. The best fresh sushi that you can have close to central station.",
+            location: {lat: 34.9875, lng: 135.7593},
+            key: 1
         },
         {
-            name: "Daiki-Suisan Kaitenzushi",
-            description: "",
-            location: {lat: 34.990967, lng: 135.7587377}
+            name: "Takoyaki-Shichichan",
+            description: "voluptates ducimus sint nostrum mollitia explicabo placeat quam quod fugiat hic ullam aperiam dolorum libero!",
+            location: {lat: 34.98, lng: 135.76},
+            key: 2
+        },
+        {
+            name: "Yakiniku-Yaruki",
+            description: "voluptates ducimus sint nostrum mollitia explicabo placeat quam quod fugiat hic ullam aperiam dolorum libero!",
+            location: {lat: 34.9849, lng: 135.7593},
+            key: 3
         },
 
     ]

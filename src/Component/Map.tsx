@@ -5,14 +5,15 @@ interface Props {
   spot:{
     name: string,
     description: string,
-    location: { lat: number | null, lng: number | null } 
+    location: { lat: number | null, lng: number | null },
+    key: number
   }
 }
 
 const Map: React.FC<Props> = ({ spot }) => {
   return (
     <GoogleMap
-      defaultZoom={15}
+      defaultZoom={17}
       defaultCenter={{ lat: 0, lng: 0 }}
       center={{ lat: spot.location.lat, lng: spot.location.lng }}
     >
