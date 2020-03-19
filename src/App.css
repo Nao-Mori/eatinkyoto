@@ -1,1 +1,15 @@
+.back{
+    background-color: rgba(0,0,0,0)
+}
+.spot-card{
+    padding-left: 280px;
+}
 
+@media screen and (max-width: 1000px) {
+    .back{
+        background-color: rgba(0,0,0,0.5)
+    }
+    .spot-card{
+        padding-left: 0;
+    }
+}

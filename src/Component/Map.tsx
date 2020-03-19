@@ -1,12 +1,27 @@
 import React from 'react';
-import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps"
+import { GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-maps"
 
-const Map: React.FC = () => {
+interface Props {
+  spot:{
+    name: string,
+    description: string,
+    location: { lat: number | null, lng: number | null } 
+  }
+}
+
+const Map: React.FC<Props> = ({ spot }) => {
   return (
-    <GoogleMap />
+    <GoogleMap
+      defaultZoom={15}
+      defaultCenter={{ lat: 0, lng: 0 }}
+      center={{ lat: spot.location.lat, lng: spot.location.lng }}
+    >
+      <Marker
+        title={spot.name}
+        position={{ lat: spot.location.lat, lng: spot.location.lng }}
+      />
+    </GoogleMap>
   );
 }
 
-const Wrap = withScriptjs(withGoogleMap(Map))
-
-export default Wrap;
+export default withScriptjs(withGoogleMap(Map));
