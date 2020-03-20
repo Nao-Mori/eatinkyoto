@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Pause, DoubleArrow } from '@material-ui/icons';
+import { Pause, DoubleArrow, PlayArrow } from '@material-ui/icons';
 
 interface Props {
   spot:{
     name: string,
     description: string,
-    location: { lat: number | null, lng: number | null },
+    location: { lat: number, lng: number },
     key: number
   },
   pause: any,
@@ -36,7 +36,7 @@ const Content: React.FC<Props> = ({ spot, pause, next }) => {
       <div className="spot-card">
         <div style={{padding:"15px"}}>
         <div style={{display:"flex", flexWrap:"wrap"}}>
-          <div style={{maxWidth:"600px", padding:"0 10px"}}>
+          <div style={{maxWidth:"700px", padding:"0 10px"}}>
           <h1 style={{margin:0}}>{spot.name}</h1>
           <a
               href="https://www.google.com/maps/place/Daiki-suisan+kaitenzushi+Kyoto-tower-sand,+721-1+Higashishiokojicho,+Shimogyo+Ward,+Kyoto,+600-8216/@34.987541,135.7593714,17z/data=!4m2!3m1!1s0x600108afa981817b:0xafc9e8e3c6aa744b"
@@ -52,7 +52,14 @@ const Content: React.FC<Props> = ({ spot, pause, next }) => {
                   pause()
                   setPausing(!pausing)
                 }}
-                style={pausing?{margin:"10px",backgroundColor:"rgb(200,200,200)",color:"black"}:{margin:"10px"}}><Pause /></button>
+                style={pausing?{margin:"10px",backgroundColor:"rgb(200,200,200)",color:"black"}:{margin:"10px"}}
+              >
+                {pausing?
+                  <PlayArrow/>
+                :
+                  <Pause />
+                }
+              </button>
               <button onClick={next} style={{margin:"10px"}}><DoubleArrow /></button>
             </div>
             <h3>{spot.description}</h3>
@@ -60,7 +67,7 @@ const Content: React.FC<Props> = ({ spot, pause, next }) => {
             <div style={{maxWidth:"700px", padding:"15px"}}>
             <img
               alt="food"
-              style={{maxWidth:"300px", minWidth:"280px", borderRadius:"10%", margin:"auto", width:"100%"}}
+              style={{maxWidth:"300px", minWidth:"280px", borderRadius:"10%", marginLeft:"auto", width:"100%"}}
               src={`/images/pic${spot.key}.jpg`}
             />
             </div>

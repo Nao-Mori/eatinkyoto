@@ -61,15 +61,15 @@ const Header: React.FC<Props> = ({ currentSpot, touring }) => {
           })}
           </ul>
           <h3 style={{marginTop:"100px"}}>Tell me your favorite spot!</h3>
-          <h4>Name</h4>
+          <h4 style={{margin:0, paddingTop:"10px"}}>Name</h4>
           <input />
-          <h4>Address / Google Maps Link</h4>
+          <h4 style={{margin:0, paddingTop:"10px"}}>Address / Google Maps Link</h4>
           <input />
-          <h4>Description (optional)</h4>
+          <h4 style={{margin:0, paddingTop:"10px"}}>Description (optional)</h4>
           <textarea  />
           <br/>
           <button>SEND</button>
-          <div style={{height:"100px"}}/>
+          <div style={{height:"25vh"}}/>
         </animated.div>
         
       <div

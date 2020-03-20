@@ -2,7 +2,7 @@ const SpotData:
     { 
         name: string,
         description: string,
-        location: { lat: number | null, lng: number | null },
+        location: { lat: number, lng: number },
         key: number
     }[] = 
     [

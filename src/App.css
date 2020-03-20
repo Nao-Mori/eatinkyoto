@@ -46,8 +46,7 @@ button{
 }
 
 button:hover{
-    background-color:rgb(233, 233, 233);
-    color: rgb(0, 0, 0);
+    background-color:rgb(163, 63, 33);
 }
 
 button:focus {outline:0}
@@ -60,4 +59,8 @@ button:focus {outline:0}
     .spot-card{
         padding-left: 0;
     }
+}
+
+.color{
+    color: pink
 }

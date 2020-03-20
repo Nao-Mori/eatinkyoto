@@ -13,7 +13,7 @@ let paused: boolean = false
 interface State {
   name: string,
   description: string,
-  location: { lat: number | null, lng: number | null },
+  location: { lat: number, lng: number},
   key: number
 }
 
@@ -21,7 +21,7 @@ const Layout: React.FC = () => {
   const [spot, setSpot] = useState<State>({
     name: "",
     description: "",
-    location: { lat: null, lng: null },
+    location: { lat: 0, lng: 0 },
     key: 0
   })
   const [count, setCount] = useState(0)
@@ -76,8 +76,8 @@ const Layout: React.FC = () => {
       <div
         style={{
           width: `${count*10}%`,
-          backgroundColor: "rgba(150,0,0,0.5)",
-          height: "1.5vh",
+          backgroundColor: "rgba(200,100,100,0.9)",
+          height: "1.8vh",
           position: "fixed",
           bottom: 0,
           left: 0,
