@@ -14,6 +14,7 @@ interface State {
   name: string,
   description: string,
   location: { lat: number, lng: number},
+  url: string,
   key: number
 }
 
@@ -22,6 +23,7 @@ const Layout: React.FC = () => {
     name: "",
     description: "",
     location: { lat: 0, lng: 0 },
+    url: "",
     key: 0
   })
   const [count, setCount] = useState(0)

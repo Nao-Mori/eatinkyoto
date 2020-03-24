@@ -6,6 +6,7 @@ interface Props {
     name: string,
     description: string,
     location: { lat: number, lng: number },
+    url: string,
     key: number
   }
 }

@@ -6,6 +6,7 @@ interface Props {
     name: string,
     description: string,
     location: { lat: number, lng: number },
+    url: string,
     key: number
   },
   pause: any,
@@ -39,7 +40,7 @@ const Content: React.FC<Props> = ({ spot, pause, next }) => {
           <div style={{maxWidth:"700px", padding:"0 10px"}}>
           <h1 style={{margin:0}}>{spot.name}</h1>
           <a
-              href="https://www.google.com/maps/place/Daiki-suisan+kaitenzushi+Kyoto-tower-sand,+721-1+Higashishiokojicho,+Shimogyo+Ward,+Kyoto,+600-8216/@34.987541,135.7593714,17z/data=!4m2!3m1!1s0x600108afa981817b:0xafc9e8e3c6aa744b"
+              href={spot.url}
               target="blank"
               style={{paddingLeft:"5px"}}
             >
