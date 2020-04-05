@@ -6,7 +6,7 @@ import * as emailjs from "emailjs-com"
 
 interface Props {
   currentSpot: string,
-  touring: any
+  touring: (num: number) => void
 }
 
 const Header: React.FC<Props> = ({ currentSpot, touring }) => {

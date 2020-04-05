@@ -9,8 +9,8 @@ interface Props {
     url: string,
     key: number
   },
-  pause: any,
-  next: any
+  pause: () => void,
+  next: () => void
 }
 
 

@@ -74,7 +74,7 @@ const Layout: React.FC = () => {
         loadingElement={<div style={{ height: `100%` }} />}
         spot={spot}
       />
-      <Content spot={spot} pause={pause} next={next} />
+      <Content spot = {spot} pause = {pause} next = {next} />
       <div
         style={{
           width: `${count*10}%`,
