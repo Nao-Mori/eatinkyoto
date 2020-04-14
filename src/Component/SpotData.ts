@@ -9,7 +9,7 @@ const SpotData:
     [
         {
             name: "Ginjo Ramen Kubota",
-            description: "If you want authentic, simple but great Ramen / Tsukemen, go here. Without any toppings, their soup and noodles are more than enoguh to impress you!",
+            description: "If you want authentic, simple but great Ramen / Tsukemen, go here. Without any toppings, their soup and noodles are more than enough to impress you!",
             location: {lat: 34.9902, lng: 135.7531},
             url: "https://www.google.com/maps/place/Ginjo+Ramen+Kubota/@34.9929389,135.7530504,17z/data=!3m1!4b1!4m5!3m4!1s0x600108a13c7a2d5d:0x2c1acd85fdf5ca75!8m2!3d34.9929389!4d135.7552391",
             key: 0
